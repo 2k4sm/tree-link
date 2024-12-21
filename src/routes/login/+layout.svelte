@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  
+  import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
   let {children} = $props();
 </script>
 
@@ -22,8 +22,10 @@
   </ul>
 </nav>
 
-<main class="card w-4/6 bg-neutral text-neutral-content mx-auto">
-  <div class="card-body items-center text-center">
-    {@render children()}
-  </div>
-</main>
+<AnimatedRoute>
+  <main class="card w-4/6 bg-neutral text-neutral-content mx-auto">
+    <div class="card-body items-center text-center">
+      {@render children()}
+    </div>
+  </main>  
+</AnimatedRoute>
