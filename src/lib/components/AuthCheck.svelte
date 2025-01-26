@@ -1,7 +1,7 @@
 <script lang="ts">
     import { user } from "$lib/userStore";
 
-    const {children} = $props();
+    const { children } = $props();
 </script>
 
 {#if $user}
