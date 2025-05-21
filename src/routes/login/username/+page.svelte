@@ -11,8 +11,8 @@
     onMount(async () => {
         try {
             record = await pb
-                .collection("usernames")
-                .getFirstListItem(`user_id = "${pb.authStore.record?.id}"`);
+                .collection("trees")
+                .getFirstListItem(`user_id="${pb.authStore.record?.id}"`);
         } catch (error) {
             console.error("Error fetching record:", error);
         }
@@ -39,7 +39,7 @@
 
             try {
                 const exists = await pb
-                    .collection("usernames")
+                    .collection("trees")
                     .getFirstListItem(`username="${username}"`);
                 isAvailable = !exists;
             } catch (err) {
@@ -97,7 +97,7 @@
             );
 
             // Create record
-            record = await pb.collection("usernames").create(formData);
+            record = await pb.collection("trees").create(formData);
             username = "";
             isAvailable = false;
         } catch (err) {
